@@ -1,1 +1,20 @@
 # WWW
+
+Started 1/23/2025
+
+## MVP
+
+
+- Create a 2D character controller. The player should be able to walk left or right. They cannot
+	jump, instead gravity will reverse directions. Gravity will only change if the player is
+	standing on a surface.
+- Create a puzzle level. Each level will be made up of multiple rooms.
+	- Rooms can contain spikes, moving platforms, moving enemies, or dissolving platforms
+		(that disappear a second after they player stands on them)
+	- The player can exit the room in any direction, and will walk or fall into an adjacent room
+		when they do so.
+	- Each room will contain one or more checkpoints. When a player touches a checkpoint, that
+		checkpoint will light up. Players will return to the illuminated checkpoint when they die
+		(even if it is in another room).
+- Make some music and sound effects! (If you want to learn to make your own music, then take this
+	opportunity to learn about chip-tunes, and compose something fun!)
