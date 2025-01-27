@@ -26,3 +26,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	var collision = get_last_slide_collision()
+	
+	var body = null
+	if collision:
+		body = collision.get_collider()
+	
+	if body and body.name == "Spikes":
+		print("spikes")
