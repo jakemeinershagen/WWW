@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dybxlo0nsmnew"]
+[gd_scene load_steps=8 format=4 uid="uid://dybxlo0nsmnew"]
 
 [ext_resource type="Texture2D" uid="uid://bo2y7egqrwo65" path="res://assets/tiles.png" id="1_4ukwi"]
 [ext_resource type="PackedScene" uid="uid://bda87encvjb6w" path="res://scenes/player.tscn" id="2_4qf34"]
+[ext_resource type="PackedScene" uid="uid://dv3d1fyvdedfy" path="res://scenes/checkpoint.tscn" id="3_o5r34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aaxxj"]
 texture = ExtResource("1_4ukwi")
@@ -72,4 +73,7 @@ tile_map_data = PackedByteArray("AAAQABAAAAAEAAAAAAARABAAAAAEAAAAAAASABAAAAAEAAA
 tile_set = SubResource("TileSet_x7hqo")
 
 [node name="Player" parent="." instance=ExtResource("2_4qf34")]
-position = Vector2(142, 215)
+position = Vector2(141, 224)
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_o5r34")]
+position = Vector2(168, 224)

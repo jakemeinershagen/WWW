@@ -1,11 +1,12 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var gravity = Vector2(0, 980)
 
+@onready var checkpoint = position
 
 func _physics_process(delta: float) -> void:
 	# Handle jump.
@@ -34,4 +35,10 @@ func _physics_process(delta: float) -> void:
 		body = collision.get_collider()
 	
 	if body and body.name == "Spikes":
-		print("spikes")
+		die()
+
+
+func die():
+	position = checkpoint
+	velocity = Vector2.ZERO
+	print("ded")
