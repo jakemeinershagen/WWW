@@ -41,4 +41,3 @@ func _physics_process(delta: float) -> void:
 func die():
 	position = checkpoint
 	velocity = Vector2.ZERO
-	print("ded")
