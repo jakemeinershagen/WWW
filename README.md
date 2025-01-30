@@ -5,7 +5,7 @@ Started 1/23/2025
 ## MVP
 
 - Create a puzzle level. Each level will be made up of multiple rooms.
-	- Rooms can contain spikes, moving platforms, moving enemies, or dissolving platforms
+	- Rooms can contain spikes, moving platforms, collectible coins, or dissolving platforms
 		(that disappear a second after they player stands on them)
 	- The player can exit the room in any direction, and will walk or fall into an adjacent room
 		when they do so.
