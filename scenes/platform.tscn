@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl0xa3yc5f1gj"]
+
+[ext_resource type="Texture2D" uid="uid://b5v845w0rxquh" path="res://assets/platform.png" id="1_2lnq8"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_f2yg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdqk7"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3my38"]
+size = Vector2(32, 10)
+
+[node name="Platform" type="StaticBody2D"]
+z_index = -1
+collision_layer = 4
+script = ExtResource("1_f2yg7")
+lifetime = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_2lnq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sdqk7")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("RectangleShape2D_3my38")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
