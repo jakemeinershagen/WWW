@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dybxlo0nsmnew"]
+[gd_scene load_steps=10 format=4 uid="uid://dybxlo0nsmnew"]
 
 [ext_resource type="Texture2D" uid="uid://bo2y7egqrwo65" path="res://assets/tiles.png" id="1_4ukwi"]
 [ext_resource type="PackedScene" uid="uid://bda87encvjb6w" path="res://scenes/player.tscn" id="2_4qf34"]
 [ext_resource type="PackedScene" uid="uid://dv3d1fyvdedfy" path="res://scenes/checkpoint.tscn" id="3_o5r34"]
 [ext_resource type="PackedScene" uid="uid://bl0xa3yc5f1gj" path="res://scenes/platform.tscn" id="4_fubsr"]
+[ext_resource type="PackedScene" uid="uid://e5y31830xll8" path="res://scenes/coin.tscn" id="5_mqoqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aaxxj"]
 texture = ExtResource("1_4ukwi")
@@ -77,8 +78,14 @@ tile_set = SubResource("TileSet_x7hqo")
 position = Vector2(141, 224)
 
 [node name="Checkpoint" parent="." instance=ExtResource("3_o5r34")]
-position = Vector2(168, 224)
+position = Vector2(525, 160)
 
 [node name="Platform" parent="." instance=ExtResource("4_fubsr")]
 position = Vector2(146, 153)
 scale = Vector2(1.5, 1)
+
+[node name="Coin" parent="." instance=ExtResource("5_mqoqv")]
+position = Vector2(234, 227)
+
+[node name="Coin2" parent="." instance=ExtResource("5_mqoqv")]
+position = Vector2(273, 435)
