@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxp3u2rk4qm4l"]
+
+[ext_resource type="Script" path="res://scripts/room_changer.gd" id="1_jhng5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qwc65"]
+a = Vector2(-56, 0)
+b = Vector2(56, 0)
+
+[node name="RoomChanger" type="Node2D"]
+script = ExtResource("1_jhng5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_qwc65")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
