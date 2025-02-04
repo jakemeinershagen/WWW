@@ -123,3 +123,6 @@ position = Vector2(720, 80)
 rotation = 1.5708
 room_1_cam = NodePath("../Room1")
 room_2_cam = NodePath("../Room3")
+
+[node name="Checkpoint2" parent="." instance=ExtResource("3_eehvn")]
+position = Vector2(192, 224)
