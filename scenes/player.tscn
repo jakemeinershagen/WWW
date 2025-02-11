@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bda87encvjb6w"]
+[gd_scene load_steps=6 format=3 uid="uid://bda87encvjb6w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fm5ul"]
 [ext_resource type="Texture2D" uid="uid://q05xrt63442g" path="res://assets/player.png" id="1_vdckc"]
+[ext_resource type="AudioStream" uid="uid://dw7if4khs0n7q" path="res://assets/coin.wav" id="3_q7bbu"]
+[ext_resource type="AudioStream" uid="uid://lqnr3odvtran" path="res://assets/tap.wav" id="4_bw5c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3joh"]
 size = Vector2(12, 31)
@@ -16,3 +18,9 @@ texture = ExtResource("1_vdckc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_r3joh")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q7bbu")
+
+[node name="TapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bw5c4")

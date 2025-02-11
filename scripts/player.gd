@@ -5,6 +5,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var gravity = Vector2(0, 980)
+var falling = false
 
 @onready var checkpoint = position
 
@@ -36,9 +37,19 @@ func _physics_process(delta: float) -> void:
 	
 	if body and body.name == "Spikes":
 		die()
+	
+	if not (is_on_ceiling() or is_on_floor()):
+		falling = true
+	if (is_on_ceiling() or is_on_floor()) and falling:
+		$TapSound.play()
+		falling = false
 
 
 func die():
 	position = checkpoint
 	velocity = Vector2.ZERO
 	Shared.reset_num += 1
+
+
+func play_pickup_sound():
+	$PickupSound.play()
