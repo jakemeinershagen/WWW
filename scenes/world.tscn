@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://dybxlo0nsmnew"]
+[gd_scene load_steps=14 format=4 uid="uid://dybxlo0nsmnew"]
 
 [ext_resource type="Texture2D" uid="uid://bo2y7egqrwo65" path="res://assets/tiles.png" id="1_7ka7j"]
 [ext_resource type="PackedScene" uid="uid://bda87encvjb6w" path="res://scenes/player.tscn" id="2_gbbop"]
 [ext_resource type="PackedScene" uid="uid://dv3d1fyvdedfy" path="res://scenes/checkpoint.tscn" id="3_eehvn"]
+[ext_resource type="Script" path="res://scenes/camera_changer.gd" id="3_ola1x"]
 [ext_resource type="PackedScene" uid="uid://bl0xa3yc5f1gj" path="res://scenes/platform.tscn" id="4_wk7sa"]
 [ext_resource type="PackedScene" uid="uid://e5y31830xll8" path="res://scenes/coin.tscn" id="5_5k81n"]
 [ext_resource type="PackedScene" uid="uid://bxp3u2rk4qm4l" path="res://scenes/room_changer.tscn" id="6_l4yb3"]
@@ -85,9 +86,10 @@ tile_map_data = PackedByteArray("AAAHABMAAAAEAAAAAAAIABMAAAAEAAAAAAAJABMAAAAEAAA
 tile_set = SubResource("TileSet_x7hqo")
 
 [node name="Player" parent="." instance=ExtResource("2_gbbop")]
-position = Vector2(48, 64)
+position = Vector2(542, 395)
 
 [node name="Cameras" type="Node" parent="."]
+script = ExtResource("3_ola1x")
 
 [node name="Room1" type="Camera2D" parent="Cameras"]
 position = Vector2(360, 240)
@@ -156,20 +158,29 @@ position = Vector2(152, -112)
 
 [node name="RoomChangers" type="Node" parent="."]
 
-[node name="RoomChanger" parent="RoomChangers" node_paths=PackedStringArray("room_1_cam", "room_2_cam") instance=ExtResource("6_l4yb3")]
-position = Vector2(600, 480)
-room_1_cam = NodePath("../../Cameras/Room1")
-room_2_cam = NodePath("../../Cameras/Room2")
+[node name="RoomChanger" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(600, 483)
+room = "Room2"
 
-[node name="RoomChanger2" parent="RoomChangers" node_paths=PackedStringArray("room_1_cam", "room_2_cam") instance=ExtResource("6_l4yb3")]
-position = Vector2(680, 480)
-room_1_cam = NodePath("../../Cameras/Room1")
-room_2_cam = NodePath("../../Cameras/Room2")
+[node name="RoomChanger4" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(600, 477)
+room = "Room1"
 
-[node name="RoomChanger3" parent="RoomChangers" node_paths=PackedStringArray("room_1_cam", "room_2_cam") instance=ExtResource("6_l4yb3")]
-position = Vector2(680, 0)
-room_1_cam = NodePath("../../Cameras/Room1")
-room_2_cam = NodePath("../../Cameras/Room3")
+[node name="RoomChanger2" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(680, 489)
+room = "Room2"
+
+[node name="RoomChanger5" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(680, 470)
+room = "Room1"
+
+[node name="RoomChanger3" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(678, -4)
+room = "Room3"
+
+[node name="RoomChanger6" parent="RoomChangers" instance=ExtResource("6_l4yb3")]
+position = Vector2(678, 5)
+room = "Room1"
 
 [node name="Coin" parent="." instance=ExtResource("5_5k81n")]
 position = Vector2(104, 56)
