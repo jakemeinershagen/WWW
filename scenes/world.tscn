@@ -139,22 +139,28 @@ scale = Vector2(1.5, 1)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(256, 256)
+room = "Room1"
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(81, 416)
+room = "Room1"
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(480, 608)
+room = "Room2"
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(88, 800)
+room = "Room2"
 
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(640, -448)
 rotation = -3.14159
+room = "Room3"
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("3_eehvn")]
 position = Vector2(152, -112)
+room = "Room3"
 
 [node name="RoomChangers" type="Node" parent="."]
 

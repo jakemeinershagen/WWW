@@ -3,11 +3,17 @@ class_name Player
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
+const GRAV_AMMOUNT = 980
 
-var gravity = Vector2(0, 980)
+var gravity = Vector2(0, GRAV_AMMOUNT)
 var falling = false
 
-@onready var checkpoint = position
+@onready var checkpoint = {
+	"position": position,
+	"gravity": gravity,
+	"rotation": rotation,
+	"room": "Room1"
+}
 
 func _physics_process(delta: float) -> void:
 	# Handle jump.
@@ -46,7 +52,10 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
-	position = checkpoint
+	position = checkpoint["position"]
+	rotation = checkpoint["rotation"]
+	gravity = checkpoint["gravity"]
+	$/root/World/Cameras.change_camera(checkpoint["room"])
 	velocity = Vector2.ZERO
 	Shared.reset_num += 1
 
