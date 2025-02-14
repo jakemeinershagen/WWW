@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dybxlo0nsmnew"]
+[gd_scene load_steps=15 format=4 uid="uid://dybxlo0nsmnew"]
 
 [ext_resource type="Texture2D" uid="uid://bo2y7egqrwo65" path="res://assets/tiles.png" id="1_7ka7j"]
 [ext_resource type="PackedScene" uid="uid://bda87encvjb6w" path="res://scenes/player.tscn" id="2_gbbop"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bl0xa3yc5f1gj" path="res://scenes/platform.tscn" id="4_wk7sa"]
 [ext_resource type="PackedScene" uid="uid://e5y31830xll8" path="res://scenes/coin.tscn" id="5_5k81n"]
 [ext_resource type="PackedScene" uid="uid://bxp3u2rk4qm4l" path="res://scenes/room_changer.tscn" id="6_l4yb3"]
+[ext_resource type="AudioStream" uid="uid://xj5cn24nlwrk" path="res://assets/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="8_o1ds1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vd7kw"]
 tile_data = PackedInt32Array(0, 65536, 0, 4, 131072, 1)
@@ -190,3 +191,8 @@ room = "Room1"
 
 [node name="Coin" parent="." instance=ExtResource("5_5k81n")]
 position = Vector2(104, 56)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_o1ds1")
+volume_db = -19.676
+autoplay = true

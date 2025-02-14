@@ -24,3 +24,4 @@ stream = ExtResource("3_q7bbu")
 
 [node name="TapSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bw5c4")
+volume_db = 4.685
