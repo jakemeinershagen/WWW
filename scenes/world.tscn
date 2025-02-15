@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dybxlo0nsmnew"]
+[gd_scene load_steps=16 format=4 uid="uid://dybxlo0nsmnew"]
 
 [ext_resource type="Texture2D" uid="uid://bo2y7egqrwo65" path="res://assets/tiles.png" id="1_7ka7j"]
 [ext_resource type="PackedScene" uid="uid://bda87encvjb6w" path="res://scenes/player.tscn" id="2_gbbop"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e5y31830xll8" path="res://scenes/coin.tscn" id="5_5k81n"]
 [ext_resource type="PackedScene" uid="uid://bxp3u2rk4qm4l" path="res://scenes/room_changer.tscn" id="6_l4yb3"]
 [ext_resource type="AudioStream" uid="uid://xj5cn24nlwrk" path="res://assets/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="8_o1ds1"]
+[ext_resource type="PackedScene" uid="uid://caq7agcqkvqy4" path="res://scenes/ui.tscn" id="9_pn1ca"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vd7kw"]
 tile_data = PackedInt32Array(0, 65536, 0, 4, 131072, 1)
@@ -87,7 +88,7 @@ tile_map_data = PackedByteArray("AAAHABMAAAAEAAAAAAAIABMAAAAEAAAAAAAJABMAAAAEAAA
 tile_set = SubResource("TileSet_x7hqo")
 
 [node name="Player" parent="." instance=ExtResource("2_gbbop")]
-position = Vector2(542, 395)
+position = Vector2(49, 57)
 
 [node name="Cameras" type="Node" parent="."]
 script = ExtResource("3_ola1x")
@@ -196,3 +197,5 @@ position = Vector2(104, 56)
 stream = ExtResource("8_o1ds1")
 volume_db = -19.676
 autoplay = true
+
+[node name="UI" parent="." instance=ExtResource("9_pn1ca")]
